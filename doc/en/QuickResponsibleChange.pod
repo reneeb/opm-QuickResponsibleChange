@@ -1,0 +1,19 @@
+=head1 NAME
+
+QuickResponsibleChange - change the ticket responsible quickly
+
+=head1 DESCRIPTION
+
+With this addon you get a dropdown in the ticket zoom and ticket overview that
+makes it possible to change the responsible with two clicks...
+
+=back
+
+=head1 AUTHOR AND LICENSE
+
+This package was written by Renee Baecker E<lt>otrs@perl-services.deE<gt>.
+
+The package is licensed unter AGPL. If you
+did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
+
+

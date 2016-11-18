@@ -1,0 +1,31 @@
+# --
+# QuickResponsibleChangeSnippet.tt - provides HTML for QuickResponsibleChangeSnippet.pm
+# Copyright (C) 2016 Perl-Services.de, http://www.perl-services.de 
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+                    <li class="[% Data.Class | html %]">
+                        <form title="[% Translate("QuickResponsibleChange ticket") | html %]" action="[% Env("CGIHandle") | html %]" method="post">
+                            <input type="hidden" name="Action" value="AgentTicketResponsibleChangeBulk"/>
+                            <input type="hidden" name="TicketID" value="[% Data.TicketID | html %]"/>
+                            <label for="QuickResponsibleChange" class="InvisibleText">[% Translate("QuickResponsibleChange") | html %]:</label>
+                            [% Data.Select %]
+                        </form>
+[% WRAPPER JSOnDocumentComplete %]
+<script type="text/javascript">//<![CDATA[
+    $('#QuickResponsibleChange').bind('change', function (Event) {
+        var URL = Core.Config.Get('Baselink');
+        var TID = $(this).val();
+
+        var thisObject = $(this);
+
+        if ( TID > 0 ) {
+            thisObject.closest('form').submit();
+        }
+    });
+//]]></script>
+[% END %]
+                    </li>

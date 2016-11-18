@@ -1,0 +1,57 @@
+# --
+# QuickResponsibleChangeSnippetTicketView.tt - provides HTML for QuickResponsibleChangeSnippetTicketView.pm
+# Copyright (C) 2016 Perl-Services.de, http://www.perl-services.de 
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+                    <li class="Bulk AlwaysPresent [% Data.Class | html %]">
+                        <form title="[% Translate("QuickResponsibleChange ticket") | html %]" action="[% Env("CGIHandle") | html %]" method="post" name="quickownerchange" id="quickownerchange">
+                            <input type="hidden" name="Action" value="AgentTicketResponsibleChangeBulk"/>
+                            <label for="QuickResponsibleChange" class="InvisibleText">[% Translate("QuickResponsibleChange") | html %]:</label>
+                            [% Data.Select %]
+                        </form>
+[% WRAPPER JSOnDocumentComplete %]
+<script type="text/javascript">//<![CDATA[
+    $('#QuickResponsibleChange').unbind('change');
+
+    $('#QuickResponsibleChange').bind('change', function (Event) {
+        // retrieve body for quickownerchange
+        var URL = Core.Config.Get('Baselink');
+        var TID = $(this).val();
+        var $SelectedTickets;
+        var CloseForm = $('#quickownerchange');
+        var TicketElementSelectors = {
+            'Small': 'div.Overview table td input:checkbox[name=TicketID]',
+            'Medium': 'ul.Overview input:checkbox[name=TicketID]',
+            'Large': 'ul.Overview input:checkbox[name=TicketID]'
+        };
+        var TicketView;
+
+        var thisObject = $(this);
+
+        if ($('#TicketOverviewMedium').length) {
+            TicketView = 'Medium';
+        }
+        else if ($('#TicketOverviewLarge').length) {
+            TicketView = 'Large';
+        }
+        else {
+            TicketView = 'Small';
+        }
+
+        if ( TID ) {
+            $SelectedTickets = $(TicketElementSelectors[TicketView] + ':checked');
+            $SelectedTickets.each(function () {
+                var HiddenField = $('<input type="hidden" name="TicketID">');
+                HiddenField.val( $(this).val() );
+                CloseForm.append( HiddenField );
+            });
+            CloseForm.submit();
+        }
+    });
+//]]></script>
+[% END %]
+                    </li>
