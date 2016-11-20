@@ -1,0 +1,24 @@
+=encoding utf-8
+
+=head1 NÉV
+
+QuickResponsibleChange - a jegyfelelős gyors megváltoztatása.
+
+=head1 LEÍRÁS
+
+Ezzel a kiegészítővel egy lenyíló menüt kap a jegynagyításban és a 
+jegyáttekintőben, amely lehetővé teszi a felelős megváltoztatását kettő 
+kattintással.
+
+=head1 SZERZŐ ÉS LICENC
+
+Ezt a csomagot Renée Bäcker E<lt>otrs@perl-services.deE<gt> készítette.
+
+Ez a modul az AGPL 3.0 szerint licencelt. Ha nem kapta meg ezt a fájlt, 
+akkor nézze meg a L<http://www.gnu.org/licenses/agpl.txt> oldalon.
+
+=head1 MAGYAR FORDÍTÁS
+
+A magyar fordítást az OTRS-megoldások csapata készítette.
+Copyright (C) 2016 Úr Balázs, L<http://otrs-megoldasok.hu>
+

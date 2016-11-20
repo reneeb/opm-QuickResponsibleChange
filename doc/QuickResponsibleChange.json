@@ -11,6 +11,7 @@
     "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
     "description" : {
         "en": "Change ticket responsibles easily.",
-        "de": "Ticketbesitzer leicht wechseln."
+        "de": "Ticketverantwortlicher leicht wechseln.",
+        "hu": "Jegyfelelősök egyszerű megváltoztatása."
     }
 }
