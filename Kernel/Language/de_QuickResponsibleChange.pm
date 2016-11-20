@@ -37,9 +37,6 @@ sub Data {
         'Modul zum Anzeigen von OuputfilterResponsibleChange in Ticketübersichten.';
     $Lang->{'Label for the NULL option in dropdown.'} = '';
     $Lang->{'Minimum permissions for the agent on the queue of the ticket to be listed as a possible responsible.'} = '';
-    $Lang->{'If enabled, the ticket will be locked after change.'} = '';
-    $Lang->{'If enabled, the responsible is set to the selected responsible.'} = '';
-    $Lang->{'If enabled, the possible responsibles have to be a member of the defined group.'} = '';
     $Lang->{'If enabled, the possible responsibles are defined by the queue the tickets is assigned to and the group.'} = '';
     $Lang->{'If enabled, for the given queues only agents of the given group(s) can view the dropdown. If you want all members of the groups \'users\' and \'admin\' to see the dropdown in tickets that are in the queue \'Raw\', you have to write \'users,admin\' as the value.'} = '';
     $Lang->{'If enabled, only agents of the given groups can see the dropdown.'} = '';
