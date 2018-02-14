@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Config">
+    <Setting Name="Frontend::Module###AgentQuickResponsibleChange" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the QuickResponsibleChange agent interface.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1">Quick responsible change.</Item>
+                    <Item Key="NavBarName"></Item>
+                    <Item Key="Title" Translatable="1">Quick Responsible Change</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Navigation###AgentQuickResponsibleChange###003-QuickResponsibleChange" Required="0" Valid="0">
+        <Description Translatable="1">Main menu item registration.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Frontend::Agent::ModuleRegistration::MainMenu</Navigation>
+        <Value>
+            <Array>
+                <DefaultItem ValueType="FrontendNavigation">
+                    <Hash>
+                    </Hash>
+                </DefaultItem>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentTicketResponsibleChangeBulk" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the bulk QuickResponsibleChange agent interface.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1">Bulk quick responsible change.</Item>
+                    <Item Key="NavBarName"></Item>
+                    <Item Key="Title" Translatable="1">Bulk Quick Responsible Change</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Navigation###AgentTicketResponsibleChangeBulk###003-QuickResponsibleChange" Required="0" Valid="0">
+        <Description Translatable="1">Main menu item registration.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Frontend::Agent::ModuleRegistration::MainMenu</Navigation>
+        <Value>
+            <Array>
+                <DefaultItem ValueType="FrontendNavigation">
+                    <Hash>
+                    </Hash>
+                </DefaultItem>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Output::FilterElementPost###OutputFilterResponsibleChange" Required="0" Valid="1">
+        <Description Translatable="1">Module to show OuputfilterResponsibleChange.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::OutputFilterResponsibleChange</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::FilterElementPost::ResponsibleChange</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+                    <Hash>
+                        <Item Key="AgentTicketZoom">1</Item>
+                    </Hash>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Output::FilterElementPost###OutputFilterResponsibleChangeTicketView" Required="0" Valid="1">
+        <Description Translatable="1">Module to show OuputfilterResponsibleChange in ticket overviews.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::OutputFilterResponsibleChange</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::FilterElementPost::ResponsibleChangeTicketView</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+                    <Hash>
+                        <Item Key="AgentTicketOverviewSmall">1</Item>
+                        <Item Key="AgentTicketOverviewMedium">1</Item>
+                        <Item Key="AgentTicketOverviewPreview">1</Item>
+                    </Hash>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Output::FilterContent###ResponsibleChangeViewJS" Required="0" Valid="1">
+        <Description Translatable="1">Modul to show OuputfilterClose in ticket overviews.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::OutputFilterResponsibleChange</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::Output::HTML::FilterContent::ResponsibleChangeTicketViewJS</Item>
+                <Item Key="Debug">0</Item>
+                <Item Key="Templates">
+                    <Hash>
+                        <Item Key="AgentTicketOverviewSmall">1</Item>
+                        <Item Key="AgentTicketOverviewMedium">1</Item>
+                        <Item Key="AgentTicketOverviewPreview">1</Item>
+                    </Hash>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="QuickResponsibleChange::NoneLabel" Required="0" Valid="1">
+        <Description Translatable="1">Label for the NULL option in dropdown.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Core</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">Quick Responsible Change</Item>
+        </Value>
+    </Setting>
+    <Setting Name="QuickResponsibleChange::Permissions" Required="0" Valid="1">
+        <Description Translatable="1">Minimum permissions for the agent on the queue of the ticket to be listed as a possible responsible.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Core</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">rw</Item>
+        </Value>
+    </Setting>
+    <Setting Name="QuickResponsibleChange::QueueGroups" Required="0" Valid="0">
+        <Description Translatable="1">If enabled, the possible responsibles are defined by the queue the tickets is assigned to and the group.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Core</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Queuename">Groupname</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="QuickResponsibleChange::ViewPermission" Required="0" Valid="0">
+        <Description Translatable="1">If enabled, for the given queues only agents of the given group(s) can view the dropdown. If you want all members of the groups 'users' and 'admin' to see the dropdown in tickets that are in the queue 'Raw', you have to write 'users,admin' as the value.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Core</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Raw">users,admin</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="QuickResponsibleChange::ViewPermissionByGroup" Required="0" Valid="0">
+        <Description Translatable="1">If enabled, only agents of the given groups can see the dropdown.</Description>
+        <Navigation>OPAR::QuickResponsibleChange::Core</Navigation>
+        <Value>
+            <Array>
+                <Item>admin</Item>
+            </Array>
+        </Value>
+    </Setting>
+</otrs_config>

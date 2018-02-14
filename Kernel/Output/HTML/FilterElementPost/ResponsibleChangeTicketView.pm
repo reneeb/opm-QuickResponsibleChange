@@ -46,9 +46,16 @@ sub Run {
     return 1 if !$Templatename;
     return 1 if !$Param{Templates}->{$Templatename};
 
+    my %UserGroups = $GroupObject->PermissionUserGet(
+        UserID => $LayoutObject->{UserID},
+        Type   => 'rw',
+    );
+      
+    my %GroupNames = reverse %UserGroups;
+
     my @GroupPermissions = @{ $ConfigObject->Get('QuickResponsibleChange::ViewPermissionByGroup') || [] };
     if ( @GroupPermissions ) {
-        my $IsAllowed = grep{ $LayoutObject->{"UserIsGroup[$_]"} }@GroupPermissions;
+        my $IsAllowed = grep{ $GroupNames{$_} }@GroupPermissions;
         return 1 if !$IsAllowed;
     }
 
@@ -107,7 +114,7 @@ sub Run {
         Size       => 1,
         HTMLQuote  => 1,
         SelectedID => 0,
-        Class      => 'Modernize',
+        Class      => 'QuickResponsibleChangeSelect Modernize',
     );
 
     my $Snippet = $LayoutObject->Output(
