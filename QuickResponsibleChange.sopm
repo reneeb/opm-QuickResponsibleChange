@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
-    <!-- GENERATED WITH OTRS::OPM::Maker::Command::sopm (1.35) -->
+    <!-- GENERATED WITH OTRS::OPM::Maker::Command::sopm (1.4) -->
     <Name>QuickResponsibleChange</Name>
-    <Version>5.0.2</Version>
-    <Framework>5.0.x</Framework>
+    <Version>6.0.1</Version>
+    <Framework>6.0.x</Framework>
     <Vendor>Perl-Services.de</Vendor>
     <URL>http://www.perl-services.de</URL>
     <Description Lang="de">Ticketverantwortlicher leicht wechseln.</Description>
@@ -11,10 +11,11 @@
     <Description Lang="hu">Jegyfelelősök egyszerű megváltoztatása.</Description>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Filelist>
-        <File Permission="644" Location="Kernel/Config/Files/QuickResponsibleChange.xml" />
+        <File Permission="644" Location="Kernel/Config/Files/XML/QuickResponsibleChange.xml" />
         <File Permission="644" Location="Kernel/Language/de_QuickResponsibleChange.pm" />
         <File Permission="644" Location="Kernel/Language/hu_QuickResponsibleChange.pm" />
         <File Permission="644" Location="Kernel/Modules/AgentTicketResponsibleChangeBulk.pm" />
+        <File Permission="644" Location="Kernel/Output/HTML/FilterContent/ResponsibleChangeTicketViewJS.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/FilterElementPost/ResponsibleChange.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/FilterElementPost/ResponsibleChangeTicketView.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/QuickResponsibleChangeSnippet.tt" />
