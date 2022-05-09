@@ -1,6 +1,6 @@
 # --
 # Kernel/Output/HTML/FilterElementPost/ResponsibleChange.pm
-# Copyright (C) 2016 Perl-Services.de, http://www.perl-services.de/
+# Copyright (C) 2016 - 2022 Perl-Services.de, https://www.perl-services.de/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
